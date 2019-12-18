@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sample Index Page</title>
+</head>
+<body>
+    <h1>hey </h1>
+    <form action="/" method="POST">
+        <div>
+            <label>Name</label>
+            <input type="text" name="name">
+        </div>
+        <input type="submit" value="Submit">    
+    </form>
+
+    <ul>
+    {% for name in name_list %}
+        <li>{{ name }}</li>
+    {% endfor %}
+    </ul>
+
+</body>
+</html>
