@@ -12,7 +12,6 @@ class User(db.Model):
     def __repr__(self):
         return self.name
 
-
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
@@ -30,6 +29,16 @@ def index():
 @app.route('/about')
 def about():
     return 'About US page'
+
+@app.route('/home/<name>')
+def home(name):
+    if request.args.get('query'):
+        query = request.args.get('query')
+        return f"The Query you passed is  {query}"
+    if name == 'admin':
+        return f"Admin Page"
+    else:
+        return f"Hello student {name}"
 
 @app.route('/contact')
 def contact():
